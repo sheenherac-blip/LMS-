@@ -1,0 +1,134 @@
+/* LMS – login page styles */
+:root {
+  --navy: #0d2239;
+  --title: #143a6b;
+  --primary: #1e90ee;
+  --primary-dark: #1779c9;
+  --border: #d7dfea;
+  --text: #0b1220;
+  --muted: #6b7280;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: minmax(300px, 42%) 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- welcome panel ---------- */
+.welcome {
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 72px 24px;
+}
+.welcome p { margin: 0; font-size: 18px; }
+.welcome h1 { margin: 0; font-size: 56px; font-weight: 700; line-height: 1.1; }
+.art { width: min(420px, 92%); height: auto; }
+.welcome-bottom { font-size: 18px; }
+
+/* ---------- form panel ---------- */
+.form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+.card {
+  width: min(480px, 100%);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 44px 40px 48px;
+  background: #fff;
+}
+.card h2 {
+  margin: 0 0 36px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--title);
+}
+label {
+  display: block;
+  margin: 0 0 6px 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--text);
+  background: #fff;
+}
+input:focus {
+  outline: 2px solid rgba(30, 144, 238, .3);
+  border-color: var(--primary);
+}
+.pw { position: relative; }
+.pw input { padding-right: 48px; }
+.eye {
+  position: absolute;
+  right: 6px;
+  top: 3px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: none;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.eye.on { color: var(--primary); }
+
+.btn {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .15s;
+}
+.btn:hover { background: var(--primary-dark); }
+.btn:disabled { opacity: .65; cursor: wait; }
+
+.alert {
+  margin: -16px 0 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #fdecec;
+  color: #a02828;
+  border: 1px solid #f3c1c1;
+}
+.alert.info { background: #e8f2fd; color: #1d4e89; border-color: #bcd7f5; }
+
+@media (max-width: 800px) {
+  .login { grid-template-columns: 1fr; }
+  .welcome { display: none; }
+  .card { padding: 32px 22px 36px; }
+}

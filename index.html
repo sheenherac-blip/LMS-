@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LMS – Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <main class="login">
+    <!-- left: welcome panel -->
+    <section class="welcome" aria-hidden="false">
+      <div class="welcome-top">
+        <p>Welcome to</p>
+        <h1>LMS</h1>
+      </div>
+
+      <svg class="art" viewBox="0 0 420 300" role="img" aria-label="Books, graduation cap, light bulb and laptop">
+        <!-- decorations -->
+        <circle cx="70" cy="40" r="6" fill="#7fd6c8"/><circle cx="360" cy="150" r="6" fill="#7fd6c8"/>
+        <circle cx="120" cy="260" r="5" fill="#f08a7a"/><circle cx="330" cy="260" r="5" fill="#7fd6c8"/>
+        <polygon points="40,90 56,98 40,106" fill="none" stroke="#f08a7a" stroke-width="2"/>
+        <polygon points="355,60 371,60 363,74" fill="none" stroke="#7fd6c8" stroke-width="2"/>
+        <!-- play button -->
+        <circle cx="105" cy="70" r="30" fill="#7fd6c8"/><circle cx="105" cy="70" r="22" fill="#e9fbf7"/>
+        <polygon points="98,58 98,82 120,70" fill="#7fd6c8"/>
+        <!-- light bulb -->
+        <circle cx="255" cy="55" r="26" fill="#f6b73c"/><rect x="244" y="78" width="22" height="14" rx="3" fill="#8fa4cf"/>
+        <path d="M255 8v10M222 22l8 8M288 22l-8 8" stroke="#f08a7a" stroke-width="3" stroke-linecap="round"/>
+        <!-- pencils -->
+        <rect x="330" y="70" width="14" height="70" rx="3" fill="#7fd6c8" transform="rotate(35 337 105)"/>
+        <rect x="330" y="215" width="14" height="70" rx="3" fill="#f08a7a" transform="rotate(50 337 250)"/>
+        <!-- laptop -->
+        <rect x="12" y="130" width="100" height="70" rx="6" fill="#f7efe1"/><circle cx="62" cy="165" r="16" fill="#f0705f"/>
+        <polygon points="57,157 57,173 71,165" fill="#fff"/>
+        <path d="M4 205h116l-8 14H12z" fill="#7fd6c8"/>
+        <!-- open book -->
+        <path d="M110 150l100 22 100-22v100l-100 22-100-22z" fill="#f7efe1"/>
+        <path d="M210 172v100" stroke="#d8c9b0" stroke-width="3"/>
+        <g stroke="#7fd6c8" stroke-width="4" stroke-linecap="round">
+          <path d="M130 185l60 13M130 202l60 13M130 219l60 13M290 185l-60 13M290 202l-60 13M290 219l-60 13"/>
+        </g>
+        <rect x="100" y="245" width="220" height="14" rx="5" fill="#2b3a67"/>
+        <!-- graduation cap -->
+        <polygon points="210,100 290,128 210,156 130,128" fill="#2b3a67"/>
+        <path d="M166 142v22c0 8 88 8 88 0v-22l-44 16z" fill="#33437a"/>
+        <path d="M268 132v32" stroke="#f6b73c" stroke-width="3"/><circle cx="268" cy="168" r="4" fill="#f6b73c"/>
+        <!-- stars + award -->
+        <g fill="#f6b73c"><polygon points="340,230 345,242 358,243 348,251 352,264 340,257 328,264 332,251 322,243 335,242"/></g>
+        <circle cx="90" cy="248" r="16" fill="#f6b73c"/><circle cx="90" cy="248" r="10" fill="#fbd16e"/>
+      </svg>
+
+      <p class="welcome-bottom">Learning Management System</p>
+    </section>
+
+    <!-- right: login form -->
+    <section class="form-side">
+      <form id="loginForm" class="card" novalidate>
+        <h2>Login to your account</h2>
+
+        <div id="alert" class="alert" role="alert" hidden></div>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <div class="pw">
+          <input id="password" name="password" type="password" autocomplete="current-password" required>
+          <button type="button" id="togglePw" class="eye" aria-label="Show password">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>
+            </svg>
+          </button>
+        </div>
+
+        <button id="submitBtn" class="btn" type="submit">Log in</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/supabase-client.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
